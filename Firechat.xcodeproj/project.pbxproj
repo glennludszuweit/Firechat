@@ -14,6 +14,9 @@
 		D4BB6A482A2E2C4400FA6939 /* FirechatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A472A2E2C4400FA6939 /* FirechatTests.swift */; };
 		D4BB6A522A2E2C4400FA6939 /* FirechatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A512A2E2C4400FA6939 /* FirechatUITests.swift */; };
 		D4BB6A542A2E2C4400FA6939 /* FirechatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A532A2E2C4400FA6939 /* FirechatUITestsLaunchTests.swift */; };
+		D4BB6A6F2A2E3BBF00FA6939 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A6E2A2E3BBF00FA6939 /* Coordinator.swift */; };
+		D4BB6A712A2E3C4200FA6939 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A702A2E3C4200FA6939 /* LoginView.swift */; };
+		D4BB6A732A2E3C5400FA6939 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A722A2E3C5400FA6939 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		D4BB6A4D2A2E2C4400FA6939 /* FirechatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirechatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BB6A512A2E2C4400FA6939 /* FirechatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirechatUITests.swift; sourceTree = "<group>"; };
 		D4BB6A532A2E2C4400FA6939 /* FirechatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirechatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4BB6A6E2A2E3BBF00FA6939 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D4BB6A702A2E3C4200FA6939 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D4BB6A722A2E3C5400FA6939 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,10 @@
 		D4BB6A352A2E2C4200FA6939 /* Firechat */ = {
 			isa = PBXGroup;
 			children = (
+				D4BB6A6D2A2E3AD300FA6939 /* Services */,
+				D4BB6A6A2A2E3AB700FA6939 /* Model */,
+				D4BB6A6C2A2E3AC800FA6939 /* View */,
+				D4BB6A6B2A2E3ABE00FA6939 /* ViewModel */,
 				D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */,
 				D4BB6A382A2E2C4200FA6939 /* ContentView.swift */,
 				D4BB6A3A2A2E2C4400FA6939 /* Assets.xcassets */,
@@ -125,6 +135,37 @@
 				D4BB6A532A2E2C4400FA6939 /* FirechatUITestsLaunchTests.swift */,
 			);
 			path = FirechatUITests;
+			sourceTree = "<group>";
+		};
+		D4BB6A6A2A2E3AB700FA6939 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4BB6A6B2A2E3ABE00FA6939 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D4BB6A6C2A2E3AC800FA6939 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4BB6A702A2E3C4200FA6939 /* LoginView.swift */,
+				D4BB6A722A2E3C5400FA6939 /* RegisterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4BB6A6D2A2E3AD300FA6939 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D4BB6A6E2A2E3BBF00FA6939 /* Coordinator.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4BB6A392A2E2C4200FA6939 /* ContentView.swift in Sources */,
+				D4BB6A732A2E3C5400FA6939 /* RegisterView.swift in Sources */,
 				D4BB6A372A2E2C4200FA6939 /* FirechatApp.swift in Sources */,
+				D4BB6A712A2E3C4200FA6939 /* LoginView.swift in Sources */,
+				D4BB6A6F2A2E3BBF00FA6939 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var coordinator: Coordinator
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack(path: $coordinator.navigationPath) {
+            LoginView()
+                .navigationDestination(for: CurrentPage.self) { navigation in
+                    switch navigation {
+                    case .login:
+                        LoginView()
+                    case .register:
+                        RegisterView()
+                    }
+                }
         }
-        .padding()
     }
 }
 

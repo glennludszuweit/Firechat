@@ -11,7 +11,7 @@ import SwiftUI
 struct FirechatApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(Coordinator())
         }
     }
 }
