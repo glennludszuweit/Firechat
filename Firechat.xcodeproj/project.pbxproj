@@ -29,6 +29,7 @@
 		D4BB6A902A2F3A4D00FA6939 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D4BB6A8F2A2F3A4D00FA6939 /* FirebaseStorage */; };
 		D4BB6A942A2F665200FA6939 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A932A2F665200FA6939 /* FirebaseManager.swift */; };
 		D4BB6A992A2F754200FA6939 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A982A2F754200FA6939 /* ImagePicker.swift */; };
+		D4BB6A9B2A2F8EB500FA6939 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4BB6A9A2A2F8EB500FA6939 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		D4BB6A882A2F29F100FA6939 /* EntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPoint.swift; sourceTree = "<group>"; };
 		D4BB6A932A2F665200FA6939 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		D4BB6A982A2F754200FA6939 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		D4BB6A9A2A2F8EB500FA6939 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				D4BB6A882A2F29F100FA6939 /* EntryPoint.swift */,
 				D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */,
 				D4BB6A3A2A2E2C4400FA6939 /* Assets.xcassets */,
+				D4BB6A9A2A2F8EB500FA6939 /* GoogleService-Info.plist */,
 				D4BB6A462A2E2C4400FA6939 /* FirechatTests */,
 				D4BB6A502A2E2C4400FA6939 /* FirechatUITests */,
 				D4BB6A342A2E2C4200FA6939 /* Products */,
@@ -325,6 +328,7 @@
 			files = (
 				D4BB6A752A2E3D4C00FA6939 /* README.md in Resources */,
 				D4BB6A822A2F23EF00FA6939 /* Localizable.strings in Resources */,
+				D4BB6A9B2A2F8EB500FA6939 /* GoogleService-Info.plist in Resources */,
 				D4BB6A3E2A2E2C4400FA6939 /* Preview Assets.xcassets in Resources */,
 				D4BB6A3B2A2E2C4400FA6939 /* Assets.xcassets in Resources */,
 			);
