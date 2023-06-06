@@ -109,11 +109,6 @@
 			children = (
 				D4BB6A742A2E3D4C00FA6939 /* README.md */,
 				D4BB6A352A2E2C4200FA6939 /* Firechat */,
-				D4BB6A382A2E2C4200FA6939 /* ContentView.swift */,
-				D4BB6A882A2F29F100FA6939 /* EntryPoint.swift */,
-				D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */,
-				D4BB6A3A2A2E2C4400FA6939 /* Assets.xcassets */,
-				D4BB6A9A2A2F8EB500FA6939 /* GoogleService-Info.plist */,
 				D4BB6A462A2E2C4400FA6939 /* FirechatTests */,
 				D4BB6A502A2E2C4400FA6939 /* FirechatUITests */,
 				D4BB6A342A2E2C4200FA6939 /* Products */,
@@ -140,6 +135,11 @@
 				D4BB6A6B2A2E3ABE00FA6939 /* ViewModel */,
 				D4BB6A3C2A2E2C4400FA6939 /* Preview Content */,
 				D4BB6A842A2F23EF00FA6939 /* Localizable.strings */,
+				D4BB6A382A2E2C4200FA6939 /* ContentView.swift */,
+				D4BB6A882A2F29F100FA6939 /* EntryPoint.swift */,
+				D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */,
+				D4BB6A3A2A2E2C4400FA6939 /* Assets.xcassets */,
+				D4BB6A9A2A2F8EB500FA6939 /* GoogleService-Info.plist */,
 			);
 			path = Firechat;
 			sourceTree = "<group>";
