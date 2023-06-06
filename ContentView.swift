@@ -12,13 +12,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $coordinator.navigationPath) {
-            LoginView()
+            EntryPoint()
                 .navigationDestination(for: CurrentPage.self) { navigation in
                     switch navigation {
+                    case .entry:
+                        EntryPoint()
                     case .login:
-                        LoginView()
+                        LoginView(authViewModel: AuthViewModel())
                     case .register:
-                        RegisterView()
+                        RegisterView(authViewModel: AuthViewModel())
+                    case .repassword:
+                        ResetPassView()
+                    case .chat:
+                        ChatView()
                     }
                 }
         }
@@ -27,6 +33,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(Coordinator()).environmentObject(UserViewModel())
     }
 }

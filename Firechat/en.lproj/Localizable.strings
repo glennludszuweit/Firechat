@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Firechat
+
+  Created by Glenn Ludszuweit on 06/06/2023.
+  
+*/
+
+"button_submit" = "Submit";
+"button_edit" = "Edit";
+"button_save" = "Save";
+"button_register" = "Register";
+"button_forgot_pass" = "Forgot passwrd?";
+
+"bar_label_listview" = "List View";
+"bar_label_gridview" = "Grid View";
+"bar_label_webview" = "Web View";
+"bar_label_profile" = "Profile";
+
+"placeholder_username" = "Username";
+"placeholder_email" = "Email";
+"placeholder_username_email" = "Username or Email";
+"placeholder_password" = "Password";
+"placeholder_repassword" = "Repeat password";
+
+"text_terms" = "By submiting this form, you agree to the terms and services.";
+"text_registered_email" = "Enter registered email address.";
