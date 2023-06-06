@@ -10,17 +10,17 @@ import SwiftUI
 struct RegisterView: View {
     @EnvironmentObject var coordinator: Coordinator
     @StateObject var authViewModel: AuthViewModel
-    @State var username: String = ""
+//    @State var username: String = ""
     @State var email: String = ""
     @State var password: String = ""
     @State var repassword: String = ""
-    @State private var image: Image?
+    @State private var image: UIImage?
     @State private var isShowingImagePicker = false
     
-    func loadImage() {
-        guard let selectedImage = UIImage(named: "selectedImage") else { return }
-        image = Image(uiImage: selectedImage)
-    }
+//    func loadImage() {
+//        guard let selectedImage = UIImage(named: "selectedImage") else { return }
+//        image = Image(uiImage: selectedImage)
+//    }
     
     var body: some View {
         VStack {
@@ -29,8 +29,8 @@ struct RegisterView: View {
                     self.isShowingImagePicker = true
                 }) {
                     HStack {
-                        if image != nil {
-                            image!
+                        if let image = self.image {
+                            Image(uiImage: image)
                                 .resizable()
                                 .frame(width: 50, height: 50)
                                 .clipShape(Circle())
@@ -44,10 +44,10 @@ struct RegisterView: View {
                         Spacer()
                     }.padding()
                 }
-                .sheet(isPresented: $isShowingImagePicker, onDismiss: loadImage) {
+                .sheet(isPresented: $isShowingImagePicker, onDismiss: nil) {
                     ImagePicker(image: self.$image)
                 }
-                TextField(NSLocalizedString("placeholder_username", comment: "Username"), text: $username)
+//                TextField(NSLocalizedString("placeholder_username", comment: "Username"), text: $username)
                 TextField(NSLocalizedString("placeholder_email", comment: "Email"), text: $email)
                 SecureField(NSLocalizedString("placeholder_password", comment: "Password"), text: $password)
                 SecureField(NSLocalizedString("placeholder_repassword", comment: "RePassword"), text: $repassword)
@@ -61,7 +61,7 @@ struct RegisterView: View {
             
             Button(action: {
                 if authViewModel.validateUser(email: email, pass: password) && password == repassword {
-                    authViewModel.register(username: username, email: email, password: password, coordinator: coordinator)
+                    authViewModel.register(image: image!, email: email, password: password, coordinator: coordinator)
                 } else {
                     print("Invalid user!")
                 }

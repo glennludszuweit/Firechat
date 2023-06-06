@@ -40,7 +40,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func register(username: String, email: String, password: String, coordinator: Coordinator) {
+    func register(image: UIImage, email: String, password: String, coordinator: Coordinator) {
         FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Error creating user: \(error)")
@@ -49,6 +49,28 @@ class AuthViewModel: ObservableObject {
                 print("Successfully created user: \(result?.user.email ?? "")")
                 coordinator.isLoggedIn = true
                 coordinator.entryScreen()
+                self.persistImageToStorage(image: image)
+            }
+        }
+    }
+    
+    func persistImageToStorage(image: UIImage?) {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        guard let imageData = image?.jpegData(compressionQuality: 0.5) else { return }
+        let ref = FirebaseManager.shared.storage.reference(withPath: uid)
+        ref.putData(imageData, metadata: nil) { metadata, error in
+            if let error = error {
+                print("Error saving image: \(error)")
+                return
+            } else {
+                ref.downloadURL { url, error in
+                    if let error = error {
+                        print("Error retrieving image: \(error)")
+                        return
+                    } else {
+                        print("Successful retrieving image: \(url?.absoluteString ?? "")")
+                    }
+                }
             }
         }
     }

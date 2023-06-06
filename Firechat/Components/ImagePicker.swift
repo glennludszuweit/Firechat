@@ -8,40 +8,41 @@
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var image: Image?
-    @Environment(\.presentationMode) private var presentationMode
     
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        @Binding var image: Image?
-        private let presentationMode: Binding<PresentationMode>
+    @Binding var image: UIImage?
+    
+    private let controller = UIImagePickerController()
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(parent: self)
+    }
+    
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
-        init(image: Binding<Image?>, presentationMode: Binding<PresentationMode>) {
-            _image = image
-            self.presentationMode = presentationMode
+        let parent: ImagePicker
+        
+        init(parent: ImagePicker) {
+            self.parent = parent
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            guard let uiImage = info[.originalImage] as? UIImage else { return }
-            image = Image(uiImage: uiImage)
-            presentationMode.wrappedValue.dismiss()
+            parent.image = info[.originalImage] as? UIImage
+            picker.dismiss(animated: true)
         }
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            presentationMode.wrappedValue.dismiss()
+            picker.dismiss(animated: true)
         }
+        
     }
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        return picker
+    func makeUIViewController(context: Context) -> some UIViewController {
+        controller.delegate = context.coordinator
+        return controller
     }
     
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(image: $image, presentationMode: presentationMode)
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-        // No update needed
-    }
 }
