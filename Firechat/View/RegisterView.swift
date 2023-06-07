@@ -17,11 +17,6 @@ struct RegisterView: View {
     @State private var image: UIImage?
     @State private var isShowingImagePicker = false
     
-//    func loadImage() {
-//        guard let selectedImage = UIImage(named: "selectedImage") else { return }
-//        image = Image(uiImage: selectedImage)
-//    }
-    
     var body: some View {
         VStack {
             Group {

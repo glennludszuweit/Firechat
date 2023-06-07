@@ -22,7 +22,7 @@ struct ContentView: View {
                     case .register:
                         RegisterView(authViewModel: AuthViewModel())
                     case .repassword:
-                        ResetPassView()
+                        ResetPassView(authViewModel: AuthViewModel())
                     case .chat:
                         ChatView()
                     }

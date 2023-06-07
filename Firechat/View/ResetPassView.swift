@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ResetPassView: View {
+    @EnvironmentObject var coordinator: Coordinator
+    @StateObject var authViewModel: AuthViewModel
     @State var email: String = ""
+    
     var body: some View {
         VStack {
             TextField(NSLocalizedString("placeholder_email", comment: "Email"), text: $email)
@@ -20,13 +23,14 @@ struct ResetPassView: View {
                 .foregroundColor(.gray)
             
             Button(action: {
-                print(NSLocalizedString("button_submit", comment: "Submit"))
+                authViewModel.resetPassword(email: email, coordinator: coordinator)
             }, label: {
                 Text(NSLocalizedString("button_submit", comment: "Submit"))
                     .frame(maxWidth: .infinity)
             }).padding(10)
                 .buttonStyle(.borderedProminent)
                 .tint(.orange)
+                .disabled(authViewModel.validateEmail(email: email) ? false : true)
             
             Spacer()
         }
@@ -37,6 +41,6 @@ struct ResetPassView: View {
 
 struct ResetPassView_Previews: PreviewProvider {
     static var previews: some View {
-        ResetPassView()
+        ResetPassView(authViewModel: AuthViewModel())
     }
 }
