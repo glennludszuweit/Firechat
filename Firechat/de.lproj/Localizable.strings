@@ -6,6 +6,8 @@
   
 */
 
+"button_cancel" = "Stornieren";
+"button_okay" = "Okay";
 "button_submit" = "Einreichen";
 "button_edit" = "Bearbeiten";
 "button_save" = "Speichern";

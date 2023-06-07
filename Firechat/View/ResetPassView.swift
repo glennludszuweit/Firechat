@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ResetPassView: View {
     @EnvironmentObject var coordinator: Coordinator
+    @EnvironmentObject var alertViewModel: AlertViewModel
     @StateObject var authViewModel: AuthViewModel
     @State var email: String = ""
     
@@ -23,7 +24,7 @@ struct ResetPassView: View {
                 .foregroundColor(.gray)
             
             Button(action: {
-                authViewModel.resetPassword(email: email, coordinator: coordinator)
+                authViewModel.resetPassword(email: email, coordinator: coordinator, alertViewModel: alertViewModel)
             }, label: {
                 Text(NSLocalizedString("button_submit", comment: "Submit"))
                     .frame(maxWidth: .infinity)

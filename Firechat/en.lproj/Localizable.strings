@@ -6,6 +6,8 @@
   
 */
 
+"button_cancel" = "Cancel";
+"button_okay" = "Okay";
 "button_submit" = "Submit";
 "button_edit" = "Edit";
 "button_save" = "Save";

@@ -24,6 +24,7 @@ struct FirechatApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(Coordinator())
+                .environmentObject(AlertViewModel())
         }
     }
 }

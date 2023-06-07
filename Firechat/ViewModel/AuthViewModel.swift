@@ -39,10 +39,11 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func login(email: String, password: String, coordinator: Coordinator) {
+    func login(email: String, password: String, coordinator: Coordinator, alertViewModel: AlertViewModel) {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Error logging in user: \(error)")
+                alertViewModel.setErrorValues(customError: ErrorHandler.invalidLogin, showAlert: true)
                 return
             } else {
                 print("Successfully logged in user: \(result?.user.email ?? "")")
@@ -52,24 +53,25 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func register(image: UIImage, email: String, password: String, coordinator: Coordinator) {
+    func register(image: UIImage, username: String, email: String, password: String, coordinator: Coordinator, alertViewModel: AlertViewModel) {
         FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Error creating user: \(error)")
+                alertViewModel.setErrorValues(customError: ErrorHandler.registerError,  showAlert: true)
                 return
             } else {
                 print("Successfully created user: \(result?.user.email ?? "")")
                 coordinator.isLoggedIn = true
                 coordinator.entryScreen()
-                self.persistImageToStorage(image: image)
+                self.persistImageToStorage(email: email, username: username, image: image, alertViewModel: alertViewModel)
             }
         }
     }
     
-    func resetPassword(email: String, coordinator: Coordinator) {
+    func resetPassword(email: String, coordinator: Coordinator, alertViewModel: AlertViewModel) {
         FirebaseManager.shared.auth.sendPasswordReset(withEmail: email) { error in
-            if let error = error {
-                print("Error sending password reset: \(error)")
+            if error != nil {
+                alertViewModel.setErrorValues(customError: ErrorHandler.emailNotRegistered, showAlert: true)
                 return
             } else {
                 print("Password reset link sent to email.")
@@ -78,7 +80,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func persistImageToStorage(image: UIImage?) {
+    private func persistImageToStorage(email: String, username: String, image: UIImage?, alertViewModel: AlertViewModel) {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         guard let imageData = image?.jpegData(compressionQuality: 0.5) else { return }
         let ref = FirebaseManager.shared.storage.reference(withPath: uid)
@@ -88,14 +90,30 @@ class AuthViewModel: ObservableObject {
                 return
             } else {
                 ref.downloadURL { url, error in
-                    if let error = error {
-                        print("Error retrieving image: \(error)")
+                    if error != nil {
+                        alertViewModel.setErrorValues(customError: ErrorHandler.imageNotSaved, showAlert: true)
                         return
                     } else {
                         print("Successful retrieving image: \(url?.absoluteString ?? "")")
+                        self.saveUserToFirestore(uid: uid, email: email, username: username, profileImgUrl: url?.absoluteString ?? "", alertViewModel: alertViewModel)
                     }
                 }
             }
         }
+    }
+    
+    private func saveUserToFirestore(uid: String, email: String, username: String, profileImgUrl: String, alertViewModel: AlertViewModel) {
+        let userData: [String:Any] = ["uid": uid, "email": email, "username": username, "image": profileImgUrl]
+        FirebaseManager.shared.firestore
+            .collection("users")
+            .document(uid)
+            .setData(userData) { error in
+                if error != nil {
+                    alertViewModel.setErrorValues(customError: ErrorHandler.failedToSaveUserInfo, showAlert: true)
+                    return
+                } else {
+                    print("Successfully saved user information.")
+                }
+            }
     }
 }

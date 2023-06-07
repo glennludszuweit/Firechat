@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var coordinator: Coordinator
+    @EnvironmentObject var alertViewModel: AlertViewModel
     @StateObject var authViewModel: AuthViewModel
     @State var email: String = ""
     @State var password: String = ""
@@ -40,7 +41,7 @@ struct LoginView: View {
             
             Button(action: {
                 if authViewModel.validateUser(email: email, pass: password) {
-                    authViewModel.login(email: email, password: password, coordinator: coordinator)
+                    authViewModel.login(email: email, password: password, coordinator: coordinator, alertViewModel: alertViewModel)
                 } else {
                     print("Invalid user!")
                 }
@@ -50,6 +51,7 @@ struct LoginView: View {
             }).padding(10)
                 .buttonStyle(.borderedProminent)
                 .tint(.orange)
+                .disabled(authViewModel.validateUser(email: email, pass: password) ? false : true)
             
             
             Spacer()
@@ -64,6 +66,7 @@ struct LoginView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
         .padding()
         .padding(.top, 50)
     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var coordinator: Coordinator
+    @EnvironmentObject var alertViewModel: AlertViewModel
     
     var body: some View {
         NavigationStack(path: $coordinator.navigationPath) {
@@ -27,6 +28,12 @@ struct ContentView: View {
                         ChatView()
                     }
                 }
+        }.overlay {
+            VStack {
+                if alertViewModel.showAlert {
+                    CustomAlert()
+                }
+            }
         }
     }
 }

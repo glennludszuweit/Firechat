@@ -9,13 +9,22 @@ import SwiftUI
 
 struct RegisterView: View {
     @EnvironmentObject var coordinator: Coordinator
+    @EnvironmentObject var alertViewModel: AlertViewModel
     @StateObject var authViewModel: AuthViewModel
-//    @State var username: String = ""
+    @State var username: String = ""
     @State var email: String = ""
     @State var password: String = ""
     @State var repassword: String = ""
     @State private var image: UIImage?
     @State private var isShowingImagePicker = false
+    
+    func canRegister() -> Bool {
+        if authViewModel.validateUser(email: email, pass: password) && password == repassword {
+            return true
+        } else {
+            return false
+        }
+    }
     
     var body: some View {
         VStack {
@@ -42,7 +51,7 @@ struct RegisterView: View {
                 .sheet(isPresented: $isShowingImagePicker, onDismiss: nil) {
                     ImagePicker(image: self.$image)
                 }
-//                TextField(NSLocalizedString("placeholder_username", comment: "Username"), text: $username)
+                TextField(NSLocalizedString("placeholder_username", comment: "Username"), text: $username)
                 TextField(NSLocalizedString("placeholder_email", comment: "Email"), text: $email)
                 SecureField(NSLocalizedString("placeholder_password", comment: "Password"), text: $password)
                 SecureField(NSLocalizedString("placeholder_repassword", comment: "RePassword"), text: $repassword)
@@ -55,8 +64,8 @@ struct RegisterView: View {
                 .padding(5)
             
             Button(action: {
-                if authViewModel.validateUser(email: email, pass: password) && password == repassword {
-                    authViewModel.register(image: image!, email: email, password: password, coordinator: coordinator)
+                if canRegister() {
+                    authViewModel.register(image: image!, username: username, email: email, password: password, coordinator: coordinator, alertViewModel: alertViewModel)
                 } else {
                     print("Invalid user!")
                 }
@@ -66,6 +75,7 @@ struct RegisterView: View {
             }).padding(10)
                 .buttonStyle(.borderedProminent)
                 .tint(.orange)
+                .disabled(canRegister() ? false : true)
             
             Spacer()
         }
