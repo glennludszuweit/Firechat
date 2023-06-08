@@ -36,7 +36,7 @@ class AuthViewModel: ObservableObject {
     func login(email: String, password: String, coordinator: Coordinator, alertViewModel: AlertViewModel) {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("Error logging in user: \(error)")
+                print("Error logging in user: \(error.localizedDescription)")
                 alertViewModel.setErrorValues(customError: ErrorHandler.invalidLogin, showAlert: true)
                 return
             } else {

@@ -16,12 +16,10 @@ struct MessagesListView: View {
             VStack {
                 MessagesHeaderView(userViewModel: UserViewModel(), authViewModel: AuthViewModel(), shouldShowLogOutOptions: $shouldShowLogOutOptions)
                 ScrollView {
-                    ForEach(0...10, id: \.self) { num in
-                        MessageCellView()
+                    ForEach(userViewModel.users, id: \.uid) { user in
+                        MessagesListCellView(user: user)
                     }
                 }
-            }.onAppear {
-                userViewModel.getCurrentUser()
             }
         } else {
             ProgressView()

@@ -20,6 +20,9 @@ enum ErrorHandler: Error {
     case imageNotSaved
     case failedToSaveUserInfo
     case failedToLogout
+    // API errors
+    case fetchingError
+    case noDataFound
 }
 
 extension ErrorHandler {
@@ -38,6 +41,11 @@ extension ErrorHandler {
             return ErrorMessage(title: "User not Saved.", message: "Failed to save user information.")
         case .failedToLogout:
             return ErrorMessage(title: "Logout Fail.", message: "Failed to logout user.")
+        // API errors
+        case .fetchingError:
+            return ErrorMessage(title: "Fetch Error.", message: "Error fetching API data.")
+        case .noDataFound:
+            return ErrorMessage(title: "Data Error.", message: "No Data Found.")
         }
     }
 }

@@ -12,10 +12,11 @@ struct EntryPoint: View {
     
     var body: some View {
         VStack {
-            LoginView(authViewModel: AuthViewModel())
-        }
-        .fullScreenCover(isPresented: $coordinator.isLoggedIn) {
+//            LoginView(authViewModel: AuthViewModel())
             MessagesListView(userViewModel: UserViewModel())
         }
+//        .fullScreenCover(isPresented: $coordinator.isLoggedIn) {
+//            MessagesListView(userViewModel: UserViewModel())
+//        }
     }
 }

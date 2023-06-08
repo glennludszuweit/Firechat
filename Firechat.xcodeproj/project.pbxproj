@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D4247F602A30CF0E002B5DBB /* MessagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F5F2A30CF0E002B5DBB /* MessagesHeaderView.swift */; };
-		D4247F622A30D1F6002B5DBB /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F612A30D1F6002B5DBB /* MessageCellView.swift */; };
+		D4247F622A30D1F6002B5DBB /* MessagesListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F612A30D1F6002B5DBB /* MessagesListCellView.swift */; };
 		D4247F642A30E028002B5DBB /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F632A30E028002B5DBB /* MessagesViewModel.swift */; };
 		D4247F662A30E2ED002B5DBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F652A30E2ED002B5DBB /* User.swift */; };
 		D4247F692A30E379002B5DBB /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F682A30E379002B5DBB /* UserViewModel.swift */; };
+		D4247F6B2A31E22D002B5DBB /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F6A2A31E22D002B5DBB /* UsersListView.swift */; };
+		D4247F6D2A31E61E002B5DBB /* UsersListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F6C2A31E61E002B5DBB /* UsersListCellView.swift */; };
 		D4BB6A372A2E2C4200FA6939 /* FirechatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */; };
 		D4BB6A392A2E2C4200FA6939 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A382A2E2C4200FA6939 /* ContentView.swift */; };
 		D4BB6A3B2A2E2C4400FA6939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4BB6A3A2A2E2C4400FA6939 /* Assets.xcassets */; };
@@ -60,10 +62,12 @@
 
 /* Begin PBXFileReference section */
 		D4247F5F2A30CF0E002B5DBB /* MessagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesHeaderView.swift; sourceTree = "<group>"; };
-		D4247F612A30D1F6002B5DBB /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
+		D4247F612A30D1F6002B5DBB /* MessagesListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListCellView.swift; sourceTree = "<group>"; };
 		D4247F632A30E028002B5DBB /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		D4247F652A30E2ED002B5DBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D4247F682A30E379002B5DBB /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		D4247F6A2A31E22D002B5DBB /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		D4247F6C2A31E61E002B5DBB /* UsersListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListCellView.swift; sourceTree = "<group>"; };
 		D4BB6A332A2E2C4200FA6939 /* Firechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirechatApp.swift; sourceTree = "<group>"; };
 		D4BB6A382A2E2C4200FA6939 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 			children = (
 				D4247F652A30E2ED002B5DBB /* User.swift */,
 				D4247F682A30E379002B5DBB /* UserViewModel.swift */,
+				D4247F6A2A31E22D002B5DBB /* UsersListView.swift */,
+				D4247F6C2A31E61E002B5DBB /* UsersListCellView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -239,7 +245,7 @@
 			children = (
 				D4247F632A30E028002B5DBB /* MessagesViewModel.swift */,
 				D4BB6A862A2F296200FA6939 /* MessagesListView.swift */,
-				D4247F612A30D1F6002B5DBB /* MessageCellView.swift */,
+				D4247F612A30D1F6002B5DBB /* MessagesListCellView.swift */,
 				D4247F5F2A30CF0E002B5DBB /* MessagesHeaderView.swift */,
 			);
 			path = Chat;
@@ -398,15 +404,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4247F622A30D1F6002B5DBB /* MessageCellView.swift in Sources */,
+				D4247F622A30D1F6002B5DBB /* MessagesListCellView.swift in Sources */,
 				D4247F602A30CF0E002B5DBB /* MessagesHeaderView.swift in Sources */,
 				D4BB6A7D2A2F216700FA6939 /* ResetPassView.swift in Sources */,
 				D4BB6A892A2F29F100FA6939 /* EntryPoint.swift in Sources */,
 				D4BB6A7C2A2F216700FA6939 /* LoginView.swift in Sources */,
 				D4BB6AA12A30864D00FA6939 /* AlertViewModel.swift in Sources */,
 				D4BB6A942A2F665200FA6939 /* FirebaseManager.swift in Sources */,
+				D4247F6B2A31E22D002B5DBB /* UsersListView.swift in Sources */,
 				D4BB6A392A2E2C4200FA6939 /* ContentView.swift in Sources */,
 				D4BB6A872A2F296200FA6939 /* MessagesListView.swift in Sources */,
+				D4247F6D2A31E61E002B5DBB /* UsersListCellView.swift in Sources */,
 				D4BB6A7B2A2F216700FA6939 /* RegisterView.swift in Sources */,
 				D4BB6A772A2E3E2000FA6939 /* AuthViewModel.swift in Sources */,
 				D4BB6A992A2F754200FA6939 /* ImagePicker.swift in Sources */,

@@ -13,6 +13,7 @@ struct MessagesHeaderView: View {
     @StateObject var userViewModel: UserViewModel
     @StateObject var authViewModel: AuthViewModel
     @Binding var shouldShowLogOutOptions: Bool
+    @State var showUsers: Bool = false
     
     var body: some View {
         HStack(spacing: 16) {
@@ -53,11 +54,13 @@ struct MessagesHeaderView: View {
             
             Spacer()
             Button {
-                print("New message")
+                showUsers = true
             } label: {
                 Image(systemName: "plus.message")
-                    .font(.system(size: 26, weight: .bold))
+                    .font(.system(size: 26))
                     .foregroundColor(.orange)
+            }.sheet(isPresented: $showUsers) {
+                UsersListView(userViewModel: UserViewModel(), showUsers: $showUsers)
             }
         }
         .actionSheet(isPresented: $shouldShowLogOutOptions) {
