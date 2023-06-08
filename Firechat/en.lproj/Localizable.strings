@@ -25,5 +25,7 @@
 "placeholder_password" = "Password";
 "placeholder_repassword" = "Repeat password";
 
+"text_settings" = "Settings";
+"text_logout" = "Logout";
 "text_terms" = "By submiting this form, you agree to the terms and services.";
 "text_registered_email" = "Enter registered email address.";

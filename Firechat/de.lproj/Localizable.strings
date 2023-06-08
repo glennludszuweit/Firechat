@@ -25,5 +25,7 @@
 "placeholder_password" = "Passwort";
 "placeholder_repassword" = "Passwort wiederholer";
 
+"text_settings" = "Einstellungen";
+"text_logout" = "Ausloggen";
 "text_terms" = "Mit dem Absenden dieses Formulars stimmen Sie den Nutzungsbedingungen zu.";
 "text_registered_email" = "Geben Sie die registrierte E-Mail-Adresse ein.";

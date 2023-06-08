@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4247F602A30CF0E002B5DBB /* MessagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F5F2A30CF0E002B5DBB /* MessagesHeaderView.swift */; };
+		D4247F622A30D1F6002B5DBB /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F612A30D1F6002B5DBB /* MessageCellView.swift */; };
+		D4247F642A30E028002B5DBB /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F632A30E028002B5DBB /* MessagesViewModel.swift */; };
+		D4247F662A30E2ED002B5DBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F652A30E2ED002B5DBB /* User.swift */; };
+		D4247F692A30E379002B5DBB /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F682A30E379002B5DBB /* UserViewModel.swift */; };
 		D4BB6A372A2E2C4200FA6939 /* FirechatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */; };
 		D4BB6A392A2E2C4200FA6939 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A382A2E2C4200FA6939 /* ContentView.swift */; };
 		D4BB6A3B2A2E2C4400FA6939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4BB6A3A2A2E2C4400FA6939 /* Assets.xcassets */; };
@@ -20,9 +25,8 @@
 		D4BB6A7B2A2F216700FA6939 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A782A2F216700FA6939 /* RegisterView.swift */; };
 		D4BB6A7C2A2F216700FA6939 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A792A2F216700FA6939 /* LoginView.swift */; };
 		D4BB6A7D2A2F216700FA6939 /* ResetPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A7A2A2F216700FA6939 /* ResetPassView.swift */; };
-		D4BB6A7F2A2F21BF00FA6939 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A7E2A2F21BF00FA6939 /* UserViewModel.swift */; };
 		D4BB6A822A2F23EF00FA6939 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4BB6A842A2F23EF00FA6939 /* Localizable.strings */; };
-		D4BB6A872A2F296200FA6939 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A862A2F296200FA6939 /* ChatView.swift */; };
+		D4BB6A872A2F296200FA6939 /* MessagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A862A2F296200FA6939 /* MessagesListView.swift */; };
 		D4BB6A892A2F29F100FA6939 /* EntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A882A2F29F100FA6939 /* EntryPoint.swift */; };
 		D4BB6A942A2F665200FA6939 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A932A2F665200FA6939 /* FirebaseManager.swift */; };
 		D4BB6A992A2F754200FA6939 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A982A2F754200FA6939 /* ImagePicker.swift */; };
@@ -55,6 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4247F5F2A30CF0E002B5DBB /* MessagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesHeaderView.swift; sourceTree = "<group>"; };
+		D4247F612A30D1F6002B5DBB /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
+		D4247F632A30E028002B5DBB /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		D4247F652A30E2ED002B5DBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D4247F682A30E379002B5DBB /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		D4BB6A332A2E2C4200FA6939 /* Firechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirechatApp.swift; sourceTree = "<group>"; };
 		D4BB6A382A2E2C4200FA6939 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,10 +80,9 @@
 		D4BB6A782A2F216700FA6939 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D4BB6A792A2F216700FA6939 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D4BB6A7A2A2F216700FA6939 /* ResetPassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassView.swift; sourceTree = "<group>"; };
-		D4BB6A7E2A2F21BF00FA6939 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		D4BB6A832A2F23EF00FA6939 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4BB6A852A2F23F600FA6939 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D4BB6A862A2F296200FA6939 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		D4BB6A862A2F296200FA6939 /* MessagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListView.swift; sourceTree = "<group>"; };
 		D4BB6A882A2F29F100FA6939 /* EntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPoint.swift; sourceTree = "<group>"; };
 		D4BB6A932A2F665200FA6939 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		D4BB6A982A2F754200FA6939 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -114,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4247F672A30E364002B5DBB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D4247F652A30E2ED002B5DBB /* User.swift */,
+				D4247F682A30E379002B5DBB /* UserViewModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		D4BB6A2A2A2E2C4200FA6939 = {
 			isa = PBXGroup;
 			children = (
@@ -139,10 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				D4BB6A6D2A2E3AD300FA6939 /* Services */,
+				D4BB6AB62A30C04B00FA6939 /* Features */,
 				D4BB6A972A2F752B00FA6939 /* Components */,
-				D4BB6A6A2A2E3AB700FA6939 /* Model */,
-				D4BB6A6C2A2E3AC800FA6939 /* View */,
-				D4BB6A6B2A2E3ABE00FA6939 /* ViewModel */,
 				D4BB6A3C2A2E2C4400FA6939 /* Preview Content */,
 				D4BB6A842A2F23EF00FA6939 /* Localizable.strings */,
 				D4BB6A382A2E2C4200FA6939 /* ContentView.swift */,
@@ -179,34 +194,6 @@
 			path = FirechatUITests;
 			sourceTree = "<group>";
 		};
-		D4BB6A6A2A2E3AB700FA6939 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D4BB6A6B2A2E3ABE00FA6939 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				D4BB6A762A2E3E2000FA6939 /* AuthViewModel.swift */,
-				D4BB6A7E2A2F21BF00FA6939 /* UserViewModel.swift */,
-				D4BB6AA02A30864D00FA6939 /* AlertViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		D4BB6A6C2A2E3AC800FA6939 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D4BB6A792A2F216700FA6939 /* LoginView.swift */,
-				D4BB6A782A2F216700FA6939 /* RegisterView.swift */,
-				D4BB6A7A2A2F216700FA6939 /* ResetPassView.swift */,
-				D4BB6A862A2F296200FA6939 /* ChatView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		D4BB6A6D2A2E3AD300FA6939 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,9 +208,50 @@
 			isa = PBXGroup;
 			children = (
 				D4BB6A982A2F754200FA6939 /* ImagePicker.swift */,
-				D4BB6AA22A30883400FA6939 /* CustomAlert.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D4BB6AB42A30C01800FA6939 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D4BB6A762A2E3E2000FA6939 /* AuthViewModel.swift */,
+				D4BB6A792A2F216700FA6939 /* LoginView.swift */,
+				D4BB6A782A2F216700FA6939 /* RegisterView.swift */,
+				D4BB6A7A2A2F216700FA6939 /* ResetPassView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		D4BB6AB62A30C04B00FA6939 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D4247F672A30E364002B5DBB /* User */,
+				D4BB6AB82A30C09300FA6939 /* Alert */,
+				D4BB6AB72A30C06F00FA6939 /* Chat */,
+				D4BB6AB42A30C01800FA6939 /* Auth */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D4BB6AB72A30C06F00FA6939 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				D4247F632A30E028002B5DBB /* MessagesViewModel.swift */,
+				D4BB6A862A2F296200FA6939 /* MessagesListView.swift */,
+				D4247F612A30D1F6002B5DBB /* MessageCellView.swift */,
+				D4247F5F2A30CF0E002B5DBB /* MessagesHeaderView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		D4BB6AB82A30C09300FA6939 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				D4BB6AA02A30864D00FA6939 /* AlertViewModel.swift */,
+				D4BB6AA22A30883400FA6939 /* CustomAlert.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,19 +398,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4247F622A30D1F6002B5DBB /* MessageCellView.swift in Sources */,
+				D4247F602A30CF0E002B5DBB /* MessagesHeaderView.swift in Sources */,
 				D4BB6A7D2A2F216700FA6939 /* ResetPassView.swift in Sources */,
 				D4BB6A892A2F29F100FA6939 /* EntryPoint.swift in Sources */,
 				D4BB6A7C2A2F216700FA6939 /* LoginView.swift in Sources */,
-				D4BB6A7F2A2F21BF00FA6939 /* UserViewModel.swift in Sources */,
 				D4BB6AA12A30864D00FA6939 /* AlertViewModel.swift in Sources */,
 				D4BB6A942A2F665200FA6939 /* FirebaseManager.swift in Sources */,
 				D4BB6A392A2E2C4200FA6939 /* ContentView.swift in Sources */,
-				D4BB6A872A2F296200FA6939 /* ChatView.swift in Sources */,
+				D4BB6A872A2F296200FA6939 /* MessagesListView.swift in Sources */,
 				D4BB6A7B2A2F216700FA6939 /* RegisterView.swift in Sources */,
 				D4BB6A772A2E3E2000FA6939 /* AuthViewModel.swift in Sources */,
 				D4BB6A992A2F754200FA6939 /* ImagePicker.swift in Sources */,
 				D4BB6A372A2E2C4200FA6939 /* FirechatApp.swift in Sources */,
+				D4247F692A30E379002B5DBB /* UserViewModel.swift in Sources */,
 				D4BB6AA52A30936800FA6939 /* ErrorHandler.swift in Sources */,
+				D4247F662A30E2ED002B5DBB /* User.swift in Sources */,
+				D4247F642A30E028002B5DBB /* MessagesViewModel.swift in Sources */,
 				D4BB6A6F2A2E3BBF00FA6939 /* Coordinator.swift in Sources */,
 				D4BB6AA32A30883400FA6939 /* CustomAlert.swift in Sources */,
 			);

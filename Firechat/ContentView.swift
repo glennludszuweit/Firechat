@@ -25,7 +25,7 @@ struct ContentView: View {
                     case .repassword:
                         ResetPassView(authViewModel: AuthViewModel())
                     case .chat:
-                        ChatView()
+                        MessagesListView(userViewModel: UserViewModel())
                     }
                 }
         }.overlay {
@@ -40,6 +40,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Coordinator()).environmentObject(UserViewModel())
+        ContentView().environmentObject(Coordinator())
     }
 }

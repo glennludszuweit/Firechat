@@ -12,11 +12,10 @@ struct EntryPoint: View {
     
     var body: some View {
         VStack {
-            if coordinator.isLoggedIn {
-                ChatView()
-            } else {
-                LoginView(authViewModel: AuthViewModel())
-            }
-        }.navigationBarBackButtonHidden(true)
+            LoginView(authViewModel: AuthViewModel())
+        }
+        .fullScreenCover(isPresented: $coordinator.isLoggedIn) {
+            MessagesListView(userViewModel: UserViewModel())
+        }
     }
 }

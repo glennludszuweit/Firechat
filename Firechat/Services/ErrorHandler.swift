@@ -19,6 +19,7 @@ enum ErrorHandler: Error {
     case emailNotRegistered
     case imageNotSaved
     case failedToSaveUserInfo
+    case failedToLogout
 }
 
 extension ErrorHandler {
@@ -34,7 +35,9 @@ extension ErrorHandler {
         case .imageNotSaved:
             return ErrorMessage(title: "Upload Fail.", message: "Failed to upload user image.")
         case .failedToSaveUserInfo:
-            return ErrorMessage(title: "User not Saved..", message: "Failed to save user information.")
+            return ErrorMessage(title: "User not Saved.", message: "Failed to save user information.")
+        case .failedToLogout:
+            return ErrorMessage(title: "Logout Fail.", message: "Failed to logout user.")
         }
     }
 }

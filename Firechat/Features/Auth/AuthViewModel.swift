@@ -11,16 +11,10 @@ import FirebaseAuth
 
 class AuthViewModel: ObservableObject {
     func validateUser(email: String?, pass: String?) -> Bool {
-        guard email != nil else { return false }
         guard pass != nil else { return false }
-        
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        
-        let isEmailValid = emailPredicate.evaluate(with: email)
         let isPassValid = pass!.count >= 8
         
-        if isEmailValid && isPassValid {
+        if validateEmail(email: email) && isPassValid {
             return true
         } else {
             return false
@@ -48,8 +42,16 @@ class AuthViewModel: ObservableObject {
             } else {
                 print("Successfully logged in user: \(result?.user.email ?? "")")
                 coordinator.isLoggedIn = true
-                coordinator.entryScreen()
             }
+        }
+    }
+    
+    func logout(coordinator: Coordinator, alertViewModel: AlertViewModel) {
+        do {
+            try FirebaseManager.shared.auth.signOut()
+            coordinator.isLoggedIn = false
+        } catch {
+            alertViewModel.setErrorValues(customError: ErrorHandler.invalidLogin, showAlert: true)
         }
     }
     
@@ -61,9 +63,10 @@ class AuthViewModel: ObservableObject {
                 return
             } else {
                 print("Successfully created user: \(result?.user.email ?? "")")
-                coordinator.isLoggedIn = true
-                coordinator.entryScreen()
                 self.persistImageToStorage(email: email, username: username, image: image, alertViewModel: alertViewModel)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    coordinator.isLoggedIn = true
+                }
             }
         }
     }

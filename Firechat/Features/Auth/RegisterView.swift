@@ -19,7 +19,10 @@ struct RegisterView: View {
     @State private var isShowingImagePicker = false
     
     func canRegister() -> Bool {
-        if authViewModel.validateUser(email: email, pass: password) && password == repassword {
+        if authViewModel.validateUser(email: email, pass: password) &&
+            password == repassword &&
+            image != nil &&
+            username.count > 0 {
             return true
         } else {
             return false
