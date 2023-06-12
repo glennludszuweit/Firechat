@@ -11,6 +11,7 @@ import SwiftUI
 class Coordinator: ObservableObject {
     @Published var navigationPath = NavigationPath()
     @Published var isLoggedIn: Bool = false
+    @Published var user: User?
     
     func entryScreen() {
         navigationPath.append(CurrentPage.entry)
@@ -31,6 +32,11 @@ class Coordinator: ObservableObject {
     func chatScreen() {
         navigationPath.append(CurrentPage.chat)
     }
+    
+    func messageLogScreen(user: User) {
+        self.user = user
+        navigationPath.append(CurrentPage.message)
+    }
 }
 
 enum CurrentPage {
@@ -39,4 +45,5 @@ enum CurrentPage {
     case register
     case repassword
     case chat
+    case message
 }

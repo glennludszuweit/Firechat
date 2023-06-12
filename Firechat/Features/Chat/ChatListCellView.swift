@@ -1,5 +1,5 @@
 //
-//  MessagesListCellView.swift
+//  ChatListCellView.swift
 //  Firechat
 //
 //  Created by Glenn Ludszuweit on 07/06/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MessagesListCellView: View {
+struct ChatListCellView: View {
     var user: User?
     
     var body: some View {
@@ -52,6 +52,6 @@ struct MessagesListCellView: View {
 
 struct MessageCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesListCellView()
+        ChatListCellView()
     }
 }

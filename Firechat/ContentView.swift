@@ -25,7 +25,9 @@ struct ContentView: View {
                     case .repassword:
                         ResetPassView(authViewModel: AuthViewModel())
                     case .chat:
-                        MessagesListView(userViewModel: UserViewModel())
+                        ChatListView(userViewModel: UserViewModel())
+                    case .message:
+                        MessageLogView(messageViewModel: MessageViewModel(), alertViewModel: AlertViewModel())
                     }
                 }
         }.overlay {

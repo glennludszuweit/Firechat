@@ -37,7 +37,7 @@ class AuthViewModel: ObservableObject {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Error logging in user: \(error.localizedDescription)")
-                alertViewModel.setErrorValues(customError: ErrorHandler.invalidLogin, showAlert: true)
+                alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                 return
             } else {
                 print("Successfully logged in user: \(result?.user.email ?? "")")
@@ -50,8 +50,8 @@ class AuthViewModel: ObservableObject {
         do {
             try FirebaseManager.shared.auth.signOut()
             coordinator.isLoggedIn = false
-        } catch {
-            alertViewModel.setErrorValues(customError: ErrorHandler.invalidLogin, showAlert: true)
+        } catch let error {
+            alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
         }
     }
     
@@ -59,7 +59,7 @@ class AuthViewModel: ObservableObject {
         FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("Error creating user: \(error)")
-                alertViewModel.setErrorValues(customError: ErrorHandler.registerError,  showAlert: true)
+                alertViewModel.setErrorValues(errorMessage: error.localizedDescription,  showAlert: true)
                 return
             } else {
                 print("Successfully created user: \(result?.user.email ?? "")")
@@ -73,8 +73,8 @@ class AuthViewModel: ObservableObject {
     
     func resetPassword(email: String, coordinator: Coordinator, alertViewModel: AlertViewModel) {
         FirebaseManager.shared.auth.sendPasswordReset(withEmail: email) { error in
-            if error != nil {
-                alertViewModel.setErrorValues(customError: ErrorHandler.emailNotRegistered, showAlert: true)
+            if let error = error {
+                alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                 return
             } else {
                 print("Password reset link sent to email.")
@@ -89,12 +89,12 @@ class AuthViewModel: ObservableObject {
         let ref = FirebaseManager.shared.storage.reference(withPath: uid)
         ref.putData(imageData, metadata: nil) { metadata, error in
             if let error = error {
-                print("Error saving image: \(error)")
+                alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                 return
             } else {
                 ref.downloadURL { url, error in
-                    if error != nil {
-                        alertViewModel.setErrorValues(customError: ErrorHandler.imageNotSaved, showAlert: true)
+                    if let error = error {
+                        alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                         return
                     } else {
                         print("Successful retrieving image: \(url?.absoluteString ?? "")")
@@ -111,8 +111,8 @@ class AuthViewModel: ObservableObject {
             .collection("users")
             .document(uid)
             .setData(userData) { error in
-                if error != nil {
-                    alertViewModel.setErrorValues(customError: ErrorHandler.failedToSaveUserInfo, showAlert: true)
+                if let error = error {
+                    alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                     return
                 } else {
                     print("Successfully saved user information.")

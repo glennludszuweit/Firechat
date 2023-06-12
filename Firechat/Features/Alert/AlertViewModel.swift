@@ -12,9 +12,10 @@ class AlertViewModel: ObservableObject {
     @Published var message: String = ""
     @Published var showAlert: Bool = false
     
-    func setErrorValues(customError: ErrorHandler, showAlert: Bool) {
-        self.title = customError.errorDescription.title
-        self.message = customError.errorDescription.message
+    func setErrorValues(errorMessage: String, showAlert: Bool) {
+        
+        self.title = "Error!"
+        self.message = errorMessage
         self.showAlert = showAlert
     }
     

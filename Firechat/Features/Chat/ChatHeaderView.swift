@@ -1,5 +1,5 @@
 //
-//  MessagesHeaderView.swift
+//  ChatHeaderView.swift
 //  Firechat
 //
 //  Created by Glenn Ludszuweit on 07/06/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MessagesHeaderView: View {
+struct ChatHeaderView: View {
     @EnvironmentObject var coordinator: Coordinator
     @EnvironmentObject var alertViewModel: AlertViewModel
     @StateObject var userViewModel: UserViewModel
@@ -60,7 +60,7 @@ struct MessagesHeaderView: View {
                     .font(.system(size: 26))
                     .foregroundColor(.orange)
             }.sheet(isPresented: $showUsers) {
-                UsersListView(userViewModel: UserViewModel(), showUsers: $showUsers)
+                UsersListView(userViewModel: UserViewModel(), messageViewModel: MessageViewModel(), showUsers: $showUsers)
             }
         }
         .actionSheet(isPresented: $shouldShowLogOutOptions) {
@@ -82,6 +82,6 @@ struct MessagesHeaderView: View {
 
 struct ChatHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesHeaderView(userViewModel: UserViewModel(), authViewModel: AuthViewModel(), shouldShowLogOutOptions: .constant(false))
+        ChatHeaderView(userViewModel: UserViewModel(), authViewModel: AuthViewModel(), shouldShowLogOutOptions: .constant(false))
     }
 }

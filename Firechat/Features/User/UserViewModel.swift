@@ -10,6 +10,7 @@ import Foundation
 class UserViewModel: ObservableObject {
     @Published var user: User?
     @Published var users: [User] = []
+    @Published var messagedUsers: [User] = []
     
     init() {
         getCurrentUser(alertViewModel: AlertViewModel())
@@ -17,22 +18,15 @@ class UserViewModel: ObservableObject {
     }
     
     func getCurrentUser(alertViewModel: AlertViewModel) {
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
-            alertViewModel.setErrorValues(customError: ErrorHandler.noDataFound, showAlert: true)
-            return
-        }
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         
         FirebaseManager.shared.firestore.collection("users").document(uid).getDocument { snapshot, error in
             if let error = error {
-                alertViewModel.setErrorValues(customError: ErrorHandler.fetchingError, showAlert: true)
-                print("Failed to fetch current user:", error)
+                alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                 return
             }
             
-            guard let data = snapshot?.data() else {
-                alertViewModel.setErrorValues(customError: ErrorHandler.noDataFound, showAlert: true)
-                return
-            }
+            guard let data = snapshot?.data() else { return }
 
             let uid = data["uid"] as? String ?? ""
             let username = data["username"] as? String ?? ""
@@ -45,15 +39,11 @@ class UserViewModel: ObservableObject {
     func getAllUsers(alertViewModel: AlertViewModel) {
         FirebaseManager.shared.firestore.collection("users").getDocuments { snapshot, error in
             if let error = error {
-                alertViewModel.setErrorValues(customError: ErrorHandler.noDataFound, showAlert: true)
-                print("Failed to fetch users:", error)
+                alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                 return
             }
             
-            guard let data = snapshot?.documents else {
-                alertViewModel.setErrorValues(customError: ErrorHandler.noDataFound, showAlert: true)
-                return
-            }
+            guard let data = snapshot?.documents else { return }
 
             data.forEach { el in
                 let uid = el["uid"] as? String ?? ""

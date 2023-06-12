@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct UsersListView: View {
+    @EnvironmentObject var coordinator: Coordinator
     @StateObject var userViewModel: UserViewModel
+    @StateObject var messageViewModel: MessageViewModel
     @Binding var showUsers: Bool
     
     var body: some View {
         VStack {
             HStack {
+                Text("Select Contact").foregroundColor(Color("DarkOrange")).padding(20)
                 Spacer()
                 Image(systemName: "xmark").font(.system(size: 20))
                     .padding(20)
@@ -23,9 +26,13 @@ struct UsersListView: View {
             }
             ScrollView {
                 ForEach(userViewModel.users, id: \.uid) { user in
-                    UsersListCellView(user: user).onTapGesture {
+                    Button {
                         showUsers = false
+                        coordinator.messageLogScreen(user: user)
+                    } label: {
+                        UsersListCellView(user: user)
                     }
+
                 }
             }
         }
@@ -34,6 +41,6 @@ struct UsersListView: View {
 
 struct UsersListView_Previews: PreviewProvider {
     static var previews: some View {
-        UsersListView(userViewModel: UserViewModel(), showUsers: .constant(true))
+        UsersListView(userViewModel: UserViewModel(), messageViewModel: MessageViewModel(), showUsers: .constant(true))
     }
 }
