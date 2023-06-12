@@ -25,9 +25,9 @@ struct ChatListView: View {
                         }
                     }
                 }
-            }
+            }.navigationBarBackButtonHidden()
         } else {
-            ProgressView()
+            ProgressView().navigationBarBackButtonHidden()
         }
     }
 }

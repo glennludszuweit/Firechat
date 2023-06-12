@@ -16,8 +16,8 @@ struct MessageLogView: View {
         VStack {
             HStack { Spacer() }
             ScrollView(showsIndicators: false) {
-                ForEach(0...20, id: \.self) { num in
-                    MessageView()
+                ForEach(messageViewModel.messages, id: \.id) { message in
+                    MessageView(message: message)
                 }
                 HStack { Spacer() }
             }.padding()
@@ -26,6 +26,9 @@ struct MessageLogView: View {
             MessageFieldView(alertViewModel: alertViewModel, messageViewModel: messageViewModel)
         }.background(Color(.white))
             .navigationTitle(coordinator.user?.username ?? "")
+            .onAppear {
+                messageViewModel.getMessages(coordinator: coordinator, alertViewModel: alertViewModel)
+            }
     }
 }
 

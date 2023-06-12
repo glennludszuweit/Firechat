@@ -10,6 +10,13 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 
+struct FirebaseConstants {
+    static let from = "from"
+    static let to = "to"
+    static let message = "message"
+    static let timestamp = "timestamp"
+}
+
 class FirebaseManager: NSObject {
     let auth: Auth
     let storage: Storage

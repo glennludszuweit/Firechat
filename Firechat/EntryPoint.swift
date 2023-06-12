@@ -12,11 +12,12 @@ struct EntryPoint: View {
     
     var body: some View {
         VStack {
-//            LoginView(authViewModel: AuthViewModel())
-            ChatListView(userViewModel: UserViewModel())
+            if coordinator.isLoggedIn {
+                ChatListView(userViewModel: UserViewModel())
+            } else {
+                LoginView(authViewModel: AuthViewModel())
+            }
+            
         }
-//        .fullScreenCover(isPresented: $coordinator.isLoggedIn) {
-//            ChatListView(userViewModel: UserViewModel())
-//        }
     }
 }
