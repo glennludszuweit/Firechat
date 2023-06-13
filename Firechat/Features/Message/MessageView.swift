@@ -17,8 +17,6 @@ struct MessageView: View {
             } else {
                 UserMessage()
             }
-        }.onAppear {
-            print(message)
         }
     }
     
@@ -33,7 +31,7 @@ struct MessageView: View {
                 .background(.white)
                 .roundedCorner(5, corners: [.topLeft, .topRight, .bottomRight])
             Spacer()
-        }.padding(.trailing, 20)
+        }.padding(.trailing, 10)
     }
     
     @ViewBuilder
@@ -47,7 +45,7 @@ struct MessageView: View {
             }.padding(8)
                 .background(.orange)
                 .roundedCorner(5, corners: [.bottomLeft, .topLeft, .topRight])
-        }.padding(.leading, 20)
+        }.padding(.leading, 10)
     }
 }
 

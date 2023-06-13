@@ -15,13 +15,22 @@ struct MessageLogView: View {
     var body: some View {
         VStack {
             HStack { Spacer() }
-            ScrollView(showsIndicators: false) {
-                ForEach(messageViewModel.messages, id: \.id) { message in
-                    MessageView(message: message)
-                }
-                HStack { Spacer() }
-            }.padding()
-                .background(Color(.lightGray).opacity(0.5))
+            ScrollViewReader{ proxy in
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        ForEach(messageViewModel.messages, id: \.id) { message in
+                            MessageView(message: message)
+                        }
+                        HStack { Spacer() }
+                            .id("Bottom")
+                    }.onReceive(messageViewModel.$proxyCounter) { _ in
+                        withAnimation(.easeOut(duration: 0.5)) {
+                            proxy.scrollTo("Bottom", anchor: .bottom)
+                        }
+                    }
+                }.padding()
+                    .background(Color(.lightGray).opacity(0.5))
+            }
             
             MessageFieldView(alertViewModel: alertViewModel, messageViewModel: messageViewModel)
         }.background(Color(.white))

@@ -11,6 +11,7 @@ import Firebase
 class MessageViewModel: ObservableObject {
     @Published var message: String = ""
     @Published var messages: [Message] = []
+    @Published var proxyCounter: Int = 0
     
     func getMessages(coordinator: Coordinator, alertViewModel: AlertViewModel) {
         guard let currentUser = FirebaseManager.shared.auth.currentUser?.uid else { return }
@@ -39,6 +40,10 @@ class MessageViewModel: ObservableObject {
                         self.messages.append(userMessage)
                     }
                 }
+                
+                DispatchQueue.main.async {
+                    self.proxyCounter += 1
+                }
             }
     }
     
@@ -50,6 +55,9 @@ class MessageViewModel: ObservableObject {
         
         senderMessageDoc(from: currentUser, to: user, data: data, alertViewModel: alertViewModel)
         recipientMessageDoc(from: user, to: currentUser, data: data, alertViewModel: alertViewModel)
+        DispatchQueue.main.async {
+            self.proxyCounter += 1
+        }
     }
     
     private func senderMessageDoc(from: String, to: String, data: [String : Any], alertViewModel: AlertViewModel) {
@@ -58,8 +66,6 @@ class MessageViewModel: ObservableObject {
             if let error = error {
                 alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                 return
-            } else {
-                print("Successfully saved user information.")
             }
         }
     }
@@ -70,8 +76,6 @@ class MessageViewModel: ObservableObject {
             if let error = error {
                 alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                 return
-            } else {
-                print("Successfully saved user information.")
             }
         }
     }

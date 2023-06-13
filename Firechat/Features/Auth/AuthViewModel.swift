@@ -36,11 +36,9 @@ class AuthViewModel: ObservableObject {
     func login(email: String, password: String, coordinator: Coordinator, alertViewModel: AlertViewModel) {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("Error logging in user: \(error.localizedDescription)")
                 alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                 return
             } else {
-                print("Successfully logged in user: \(result?.user.email ?? "")")
                 coordinator.isLoggedIn = true
             }
         }
@@ -58,11 +56,9 @@ class AuthViewModel: ObservableObject {
     func register(image: UIImage, username: String, email: String, password: String, coordinator: Coordinator, alertViewModel: AlertViewModel) {
         FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("Error creating user: \(error)")
                 alertViewModel.setErrorValues(errorMessage: error.localizedDescription,  showAlert: true)
                 return
             } else {
-                print("Successfully created user: \(result?.user.email ?? "")")
                 self.persistImageToStorage(email: email, username: username, image: image, alertViewModel: alertViewModel)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     coordinator.isLoggedIn = true
@@ -77,7 +73,6 @@ class AuthViewModel: ObservableObject {
                 alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                 return
             } else {
-                print("Password reset link sent to email.")
                 coordinator.loginScreen()
             }
         }
@@ -97,7 +92,6 @@ class AuthViewModel: ObservableObject {
                         alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                         return
                     } else {
-                        print("Successful retrieving image: \(url?.absoluteString ?? "")")
                         self.saveUserToFirestore(uid: uid, email: email, username: username, profileImgUrl: url?.absoluteString ?? "", alertViewModel: alertViewModel)
                     }
                 }
@@ -114,8 +108,6 @@ class AuthViewModel: ObservableObject {
                 if let error = error {
                     alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
                     return
-                } else {
-                    print("Successfully saved user information.")
                 }
             }
     }
