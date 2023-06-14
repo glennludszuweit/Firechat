@@ -20,6 +20,7 @@
 		D4247F782A322236002B5DBB /* RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F772A322236002B5DBB /* RoundCorner.swift */; };
 		D4247F7A2A332DCF002B5DBB /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F792A332DCF002B5DBB /* MessageView.swift */; };
 		D4247F7C2A332DE1002B5DBB /* MessageFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F7B2A332DE1002B5DBB /* MessageFieldView.swift */; };
+		D456323F2A3A6C8E004163C1 /* firechat-features.png in Resources */ = {isa = PBXBuildFile; fileRef = D456323E2A3A6C8E004163C1 /* firechat-features.png */; };
 		D486B84E2A3A46CE0044ACFC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D486B84D2A3A46CE0044ACFC /* FirebaseAnalytics */; };
 		D486B8502A3A46CE0044ACFC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D486B84F2A3A46CE0044ACFC /* FirebaseAuth */; };
 		D486B8522A3A46CE0044ACFC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D486B8512A3A46CE0044ACFC /* FirebaseCrashlytics */; };
@@ -82,6 +83,7 @@
 		D4247F772A322236002B5DBB /* RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCorner.swift; sourceTree = "<group>"; };
 		D4247F792A332DCF002B5DBB /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		D4247F7B2A332DE1002B5DBB /* MessageFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFieldView.swift; sourceTree = "<group>"; };
+		D456323E2A3A6C8E004163C1 /* firechat-features.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firechat-features.png"; sourceTree = "<group>"; };
 		D4AAB88F2A386FE200C0D730 /* firechat-auth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firechat-auth.png"; sourceTree = "<group>"; };
 		D4BB6A332A2E2C4200FA6939 /* Firechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirechatApp.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		D4BB6A2A2A2E2C4200FA6939 = {
 			isa = PBXGroup;
 			children = (
+				D456323E2A3A6C8E004163C1 /* firechat-features.png */,
 				D4AAB88F2A386FE200C0D730 /* firechat-auth.png */,
 				D4BB6A742A2E3D4C00FA6939 /* README.md */,
 				D4BB6A352A2E2C4200FA6939 /* Firechat */,
@@ -410,6 +413,7 @@
 				D4BB6A752A2E3D4C00FA6939 /* README.md in Resources */,
 				D4BB6A822A2F23EF00FA6939 /* Localizable.strings in Resources */,
 				D4BB6A9B2A2F8EB500FA6939 /* GoogleService-Info.plist in Resources */,
+				D456323F2A3A6C8E004163C1 /* firechat-features.png in Resources */,
 				D4AAB8902A386FE200C0D730 /* firechat-auth.png in Resources */,
 				D4BB6A3E2A2E2C4400FA6939 /* Preview Assets.xcassets in Resources */,
 				D4BB6A3B2A2E2C4400FA6939 /* Assets.xcassets in Resources */,

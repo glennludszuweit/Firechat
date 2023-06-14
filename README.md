@@ -17,7 +17,7 @@ Feel free to clone, reuse and improve codebase.
 - SwiftUI
 - Firebase Auth
 - Firebase Storage
-- Firestore
+- Firebase Firestore
 - Firebase Analytics
 - Firebase Crashlytics
 - Quick and Nible tests
@@ -28,3 +28,4 @@ It is also build around Protocol Oriented Programming.
 
 ## Screenshots
 ![Image alt text](./firechat-auth.png)
+![Image alt text](./firechat-features.png)
