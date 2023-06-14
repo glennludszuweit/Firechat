@@ -10,6 +10,7 @@ import SwiftUI
 struct MessageFieldView: View {
     @EnvironmentObject var coordinator: Coordinator
     @StateObject var alertViewModel: AlertViewModel
+    @StateObject var userViewModel: UserViewModel
     @State var message: String = ""
     var messageViewModel: MessageViewModel
     
@@ -35,6 +36,6 @@ struct MessageFieldView: View {
 
 struct MessageFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageFieldView(alertViewModel: AlertViewModel(), messageViewModel: MessageViewModel())
+        MessageFieldView(alertViewModel: AlertViewModel(), userViewModel: UserViewModel(), messageViewModel: MessageViewModel())
     }
 }

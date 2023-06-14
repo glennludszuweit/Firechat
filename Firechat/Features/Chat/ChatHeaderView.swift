@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ChatHeaderView: View {
     @EnvironmentObject var coordinator: Coordinator
-    @EnvironmentObject var alertViewModel: AlertViewModel
+    @StateObject var alertViewModel: AlertViewModel
     @StateObject var userViewModel: UserViewModel
     @StateObject var authViewModel: AuthViewModel
+    @StateObject var messageViewModel: MessageViewModel
     @Binding var shouldShowLogOutOptions: Bool
     @State var showUsers: Bool = false
     
     var body: some View {
         HStack(spacing: 16) {
-            AsyncImage(url: URL(string: userViewModel.user?.image ?? "")) { phase in
+            AsyncImage(url: URL(string: userViewModel.authUser?.image ?? "")) { phase in
                 if let image = phase.image {
                     image
                         .resizable()
@@ -37,7 +38,7 @@ struct ChatHeaderView: View {
             
             
             VStack(alignment: .leading, spacing: 4) {
-                Text(userViewModel.user?.username.uppercased() ?? "")
+                Text(userViewModel.authUser?.username.uppercased() ?? "")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(Color("DarkOrange"))
                 
@@ -60,13 +61,16 @@ struct ChatHeaderView: View {
                     .font(.system(size: 26))
                     .foregroundColor(.orange)
             }.sheet(isPresented: $showUsers) {
-                UsersListView(userViewModel: UserViewModel(), messageViewModel: MessageViewModel(), showUsers: $showUsers)
+                UsersListView(alertViewModel: AlertViewModel(), userViewModel: UserViewModel(), messageViewModel: MessageViewModel(), showUsers: $showUsers)
             }
         }
         .actionSheet(isPresented: $shouldShowLogOutOptions) {
             .init(title: Text(NSLocalizedString("text_settings", comment: "Settings")), buttons: [
                 .destructive(Text(NSLocalizedString("text_logout", comment: "Logout")), action: {
                     authViewModel.logout(coordinator: coordinator, alertViewModel: alertViewModel)
+                    messageViewModel.recentMessages.removeAll()
+                    messageViewModel.snapShotListener?.remove()
+                    
                 }),
                     .cancel()
             ])
@@ -82,6 +86,6 @@ struct ChatHeaderView: View {
 
 struct ChatHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatHeaderView(userViewModel: UserViewModel(), authViewModel: AuthViewModel(), shouldShowLogOutOptions: .constant(false))
+        ChatHeaderView(alertViewModel: AlertViewModel(), userViewModel: UserViewModel(), authViewModel: AuthViewModel(), messageViewModel: MessageViewModel(), shouldShowLogOutOptions: .constant(false))
     }
 }

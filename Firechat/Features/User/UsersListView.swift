@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UsersListView: View {
     @EnvironmentObject var coordinator: Coordinator
+    @StateObject var alertViewModel: AlertViewModel
     @StateObject var userViewModel: UserViewModel
     @StateObject var messageViewModel: MessageViewModel
     @Binding var showUsers: Bool
@@ -41,6 +42,6 @@ struct UsersListView: View {
 
 struct UsersListView_Previews: PreviewProvider {
     static var previews: some View {
-        UsersListView(userViewModel: UserViewModel(), messageViewModel: MessageViewModel(), showUsers: .constant(true))
+        UsersListView(alertViewModel: AlertViewModel(), userViewModel: UserViewModel(), messageViewModel: MessageViewModel(), showUsers: .constant(true))
     }
 }

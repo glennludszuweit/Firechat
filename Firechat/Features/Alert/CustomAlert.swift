@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomAlert: View {
-    @EnvironmentObject var alertViewModel: AlertViewModel
+    @StateObject var alertViewModel: AlertViewModel
     
     var body: some View {
         VStack {}.alert(alertViewModel.title, isPresented: $alertViewModel.showAlert) {
@@ -26,6 +26,6 @@ struct CustomAlert: View {
 
 struct CustomAlert_Previews: PreviewProvider {
     static var previews: some View {
-        CustomAlert()
+        CustomAlert(alertViewModel: AlertViewModel())
     }
 }

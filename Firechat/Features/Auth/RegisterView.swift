@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @EnvironmentObject var coordinator: Coordinator
-    @EnvironmentObject var alertViewModel: AlertViewModel
+    @StateObject var alertViewModel: AlertViewModel
     @StateObject var authViewModel: AuthViewModel
     @State var username: String = ""
     @State var email: String = ""
@@ -89,6 +89,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(authViewModel: AuthViewModel())
+        RegisterView(alertViewModel: AlertViewModel(), authViewModel: AuthViewModel())
     }
 }

@@ -11,6 +11,7 @@ struct MessageLogView: View {
     @EnvironmentObject var coordinator: Coordinator
     @StateObject var messageViewModel: MessageViewModel
     @StateObject var alertViewModel: AlertViewModel
+    @StateObject var userViewModel: UserViewModel
     
     var body: some View {
         VStack {
@@ -32,7 +33,7 @@ struct MessageLogView: View {
                     .background(Color(.lightGray).opacity(0.5))
             }
             
-            MessageFieldView(alertViewModel: alertViewModel, messageViewModel: messageViewModel)
+            MessageFieldView(alertViewModel: alertViewModel, userViewModel: userViewModel, messageViewModel: messageViewModel)
         }.background(Color(.white))
             .navigationTitle(coordinator.user?.username ?? "")
             .onAppear {
@@ -43,6 +44,6 @@ struct MessageLogView: View {
 
 struct MessageLogView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageLogView(messageViewModel: MessageViewModel(), alertViewModel: AlertViewModel())
+        MessageLogView(messageViewModel: MessageViewModel(), alertViewModel: AlertViewModel(), userViewModel: UserViewModel())
     }
 }

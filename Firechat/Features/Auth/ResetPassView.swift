@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ResetPassView: View {
     @EnvironmentObject var coordinator: Coordinator
-    @EnvironmentObject var alertViewModel: AlertViewModel
+    @StateObject var alertViewModel: AlertViewModel
     @StateObject var authViewModel: AuthViewModel
     @State var email: String = ""
     
@@ -42,6 +42,6 @@ struct ResetPassView: View {
 
 struct ResetPassView_Previews: PreviewProvider {
     static var previews: some View {
-        ResetPassView(authViewModel: AuthViewModel())
+        ResetPassView(alertViewModel: AlertViewModel(), authViewModel: AuthViewModel())
     }
 }

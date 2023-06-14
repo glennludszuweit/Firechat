@@ -52,6 +52,6 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(message: Message(id: "", from: "", to: "", message: "", timestamp: Date.now))
+        MessageView(message: Message(id: "", from: "", to: "", message: "", timestamp: Date.now, userImage: "", userName: "", userEmail: "", userId: ""))
     }
 }

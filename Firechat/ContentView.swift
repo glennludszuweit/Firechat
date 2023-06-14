@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var coordinator: Coordinator
-    @EnvironmentObject var alertViewModel: AlertViewModel
+    @StateObject var alertViewModel: AlertViewModel
     
     var body: some View {
         NavigationStack(path: $coordinator.navigationPath) {
@@ -19,21 +19,21 @@ struct ContentView: View {
                     case .entry:
                         EntryPoint()
                     case .login:
-                        LoginView(authViewModel: AuthViewModel())
+                        LoginView(alertViewModel: AlertViewModel(), authViewModel: AuthViewModel())
                     case .register:
-                        RegisterView(authViewModel: AuthViewModel())
+                        RegisterView(alertViewModel: AlertViewModel(), authViewModel: AuthViewModel())
                     case .repassword:
-                        ResetPassView(authViewModel: AuthViewModel())
+                        ResetPassView(alertViewModel: AlertViewModel(), authViewModel: AuthViewModel())
                     case .chat:
-                        ChatListView(userViewModel: UserViewModel())
+                        ChatListView(alertViewModel: AlertViewModel(), userViewModel: UserViewModel(), messageViewModel: MessageViewModel())
                     case .message:
-                        MessageLogView(messageViewModel: MessageViewModel(), alertViewModel: AlertViewModel())
+                        MessageLogView(messageViewModel: MessageViewModel(), alertViewModel: AlertViewModel(), userViewModel: UserViewModel())
                     }
                 }
         }.overlay {
             VStack {
                 if alertViewModel.showAlert {
-                    CustomAlert()
+                    CustomAlert(alertViewModel: AlertViewModel())
                 }
             }
         }
@@ -42,6 +42,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Coordinator())
+        ContentView(alertViewModel: AlertViewModel()).environmentObject(Coordinator())
     }
 }

@@ -15,6 +15,10 @@ struct FirebaseConstants {
     static let to = "to"
     static let message = "message"
     static let timestamp = "timestamp"
+    static let userImage = "userImage"
+    static let userName = "userName"
+    static let userEmail = "userEmail"
+    static let userId = "userId"
 }
 
 class FirebaseManager: NSObject {

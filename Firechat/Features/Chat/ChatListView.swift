@@ -9,23 +9,31 @@ import SwiftUI
 
 struct ChatListView: View {
     @EnvironmentObject var coordinator: Coordinator
+    @StateObject var alertViewModel: AlertViewModel
     @StateObject var userViewModel: UserViewModel
+    @StateObject var messageViewModel: MessageViewModel
     @State var shouldShowLogOutOptions: Bool = false
     
     var body: some View {
-        if userViewModel.user != nil {
+        if userViewModel.authUser != nil {
             VStack {
-                ChatHeaderView(userViewModel: UserViewModel(), authViewModel: AuthViewModel(), shouldShowLogOutOptions: $shouldShowLogOutOptions)
+                ChatHeaderView(alertViewModel: alertViewModel, userViewModel: UserViewModel(), authViewModel: AuthViewModel(), messageViewModel: messageViewModel, shouldShowLogOutOptions: $shouldShowLogOutOptions)
                 ScrollView {
-                    ForEach(userViewModel.users, id: \.uid) { user in
+                    ForEach(messageViewModel.recentMessages, id: \.id) { message in
                         Button {
-                            coordinator.messageLogScreen(user: user)
+                            coordinator.messageLogScreen(user: User(uid: message.userId, username: message.userName, email: message.userEmail, image: message.userImage))
                         } label: {
-                            ChatListCellView(user: user)
+                            ChatListCellView(message: message)
                         }
                     }
                 }
             }.navigationBarBackButtonHidden()
+                .onAppear {
+                    messageViewModel.getRecentMessages(coordinator: coordinator, alertViewModel: alertViewModel)
+                }
+                .refreshable {
+                    messageViewModel.getRecentMessages(coordinator: coordinator, alertViewModel: alertViewModel)
+                }
         } else {
             ProgressView().navigationBarBackButtonHidden()
         }
@@ -34,6 +42,6 @@ struct ChatListView: View {
 
 struct MessagesListView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatListView(userViewModel: UserViewModel())
+        ChatListView(alertViewModel: AlertViewModel(), userViewModel: UserViewModel(), messageViewModel: MessageViewModel())
     }
 }

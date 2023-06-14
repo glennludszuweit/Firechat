@@ -13,9 +13,9 @@ struct EntryPoint: View {
     var body: some View {
         VStack {
             if coordinator.isLoggedIn {
-                ChatListView(userViewModel: UserViewModel())
+                ChatListView(alertViewModel: AlertViewModel(), userViewModel: UserViewModel(), messageViewModel: MessageViewModel())
             } else {
-                LoginView(authViewModel: AuthViewModel())
+                LoginView(alertViewModel: AlertViewModel(), authViewModel: AuthViewModel())
             }
             
         }

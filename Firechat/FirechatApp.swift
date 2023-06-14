@@ -22,7 +22,7 @@ struct FirechatApp: App {
 //    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView( alertViewModel: AlertViewModel())
                 .environmentObject(Coordinator())
                 .environmentObject(AlertViewModel())
         }

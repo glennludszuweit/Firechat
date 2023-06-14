@@ -8,7 +8,7 @@
 import Foundation
 
 class UserViewModel: ObservableObject {
-    @Published var user: User?
+    @Published var authUser: User?
     @Published var users: [User] = []
     @Published var messagedUsers: [User] = []
     
@@ -32,7 +32,7 @@ class UserViewModel: ObservableObject {
             let username = data["username"] as? String ?? ""
             let email = data["email"] as? String ?? ""
             let image = data["image"] as? String ?? ""
-            self.user = User(uid: uid, username: username, email: email, image: image)
+            self.authUser = User(uid: uid, username: username, email: email, image: image)
         }
     }
     
