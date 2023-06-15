@@ -21,18 +21,25 @@
 		D4247F7A2A332DCF002B5DBB /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F792A332DCF002B5DBB /* MessageView.swift */; };
 		D4247F7C2A332DE1002B5DBB /* MessageFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4247F7B2A332DE1002B5DBB /* MessageFieldView.swift */; };
 		D456323F2A3A6C8E004163C1 /* firechat-features.png in Resources */ = {isa = PBXBuildFile; fileRef = D456323E2A3A6C8E004163C1 /* firechat-features.png */; };
-		D486B84E2A3A46CE0044ACFC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D486B84D2A3A46CE0044ACFC /* FirebaseAnalytics */; };
-		D486B8502A3A46CE0044ACFC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D486B84F2A3A46CE0044ACFC /* FirebaseAuth */; };
-		D486B8522A3A46CE0044ACFC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D486B8512A3A46CE0044ACFC /* FirebaseCrashlytics */; };
-		D486B8542A3A46CE0044ACFC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D486B8532A3A46CE0044ACFC /* FirebaseFirestore */; };
-		D486B8562A3A46CE0044ACFC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D486B8552A3A46CE0044ACFC /* FirebaseFirestoreSwift */; };
-		D486B8582A3A46CE0044ACFC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D486B8572A3A46CE0044ACFC /* FirebaseStorage */; };
+		D45632482A3B1322004163C1 /* MessageViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45632472A3B1322004163C1 /* MessageViewModelSpec.swift */; };
+		D456324B2A3B1495004163C1 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = D456324A2A3B1495004163C1 /* Quick */; };
+		D456324E2A3B14A8004163C1 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = D456324D2A3B14A8004163C1 /* Nimble */; };
+		D45632512A3B2079004163C1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D45632502A3B2079004163C1 /* FirebaseAnalytics */; };
+		D45632532A3B2079004163C1 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = D45632522A3B2079004163C1 /* FirebaseAppCheck */; };
+		D45632552A3B2079004163C1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D45632542A3B2079004163C1 /* FirebaseAuth */; };
+		D45632572A3B2079004163C1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D45632562A3B2079004163C1 /* FirebaseCrashlytics */; };
+		D45632592A3B2079004163C1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D45632582A3B2079004163C1 /* FirebaseFirestore */; };
+		D456325B2A3B2079004163C1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D456325A2A3B2079004163C1 /* FirebaseFirestoreSwift */; };
+		D456325D2A3B2079004163C1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D456325C2A3B2079004163C1 /* FirebaseStorage */; };
+		D456326D2A3B2336004163C1 /* UserViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456326C2A3B2336004163C1 /* UserViewModelSpec.swift */; };
+		D456326F2A3B23A4004163C1 /* FirebaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456326E2A3B23A4004163C1 /* FirebaseMock.swift */; };
+		D45632712A3B271E004163C1 /* AuthViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45632702A3B271E004163C1 /* AuthViewModelSpec.swift */; };
+		D45632732A3B27AF004163C1 /* AlertViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45632722A3B27AF004163C1 /* AlertViewModelSpec.swift */; };
 		D4AAB8902A386FE200C0D730 /* firechat-auth.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AAB88F2A386FE200C0D730 /* firechat-auth.png */; };
 		D4BB6A372A2E2C4200FA6939 /* FirechatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */; };
 		D4BB6A392A2E2C4200FA6939 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A382A2E2C4200FA6939 /* ContentView.swift */; };
 		D4BB6A3B2A2E2C4400FA6939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4BB6A3A2A2E2C4400FA6939 /* Assets.xcassets */; };
 		D4BB6A3E2A2E2C4400FA6939 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4BB6A3D2A2E2C4400FA6939 /* Preview Assets.xcassets */; };
-		D4BB6A482A2E2C4400FA6939 /* FirechatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A472A2E2C4400FA6939 /* FirechatTests.swift */; };
 		D4BB6A522A2E2C4400FA6939 /* FirechatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A512A2E2C4400FA6939 /* FirechatUITests.swift */; };
 		D4BB6A542A2E2C4400FA6939 /* FirechatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A532A2E2C4400FA6939 /* FirechatUITestsLaunchTests.swift */; };
 		D4BB6A6F2A2E3BBF00FA6939 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB6A6E2A2E3BBF00FA6939 /* Coordinator.swift */; };
@@ -84,6 +91,12 @@
 		D4247F792A332DCF002B5DBB /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		D4247F7B2A332DE1002B5DBB /* MessageFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFieldView.swift; sourceTree = "<group>"; };
 		D456323E2A3A6C8E004163C1 /* firechat-features.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firechat-features.png"; sourceTree = "<group>"; };
+		D45632462A3B1322004163C1 /* FirechatTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FirechatTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D45632472A3B1322004163C1 /* MessageViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModelSpec.swift; sourceTree = "<group>"; };
+		D456326C2A3B2336004163C1 /* UserViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelSpec.swift; sourceTree = "<group>"; };
+		D456326E2A3B23A4004163C1 /* FirebaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMock.swift; sourceTree = "<group>"; };
+		D45632702A3B271E004163C1 /* AuthViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelSpec.swift; sourceTree = "<group>"; };
+		D45632722A3B27AF004163C1 /* AlertViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModelSpec.swift; sourceTree = "<group>"; };
 		D4AAB88F2A386FE200C0D730 /* firechat-auth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firechat-auth.png"; sourceTree = "<group>"; };
 		D4BB6A332A2E2C4200FA6939 /* Firechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BB6A362A2E2C4200FA6939 /* FirechatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirechatApp.swift; sourceTree = "<group>"; };
@@ -91,7 +104,6 @@
 		D4BB6A3A2A2E2C4400FA6939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4BB6A3D2A2E2C4400FA6939 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D4BB6A432A2E2C4400FA6939 /* FirechatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirechatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4BB6A472A2E2C4400FA6939 /* FirechatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirechatTests.swift; sourceTree = "<group>"; };
 		D4BB6A4D2A2E2C4400FA6939 /* FirechatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirechatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4BB6A512A2E2C4400FA6939 /* FirechatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirechatUITests.swift; sourceTree = "<group>"; };
 		D4BB6A532A2E2C4400FA6939 /* FirechatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirechatUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -118,12 +130,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D486B8562A3A46CE0044ACFC /* FirebaseFirestoreSwift in Frameworks */,
-				D486B8522A3A46CE0044ACFC /* FirebaseCrashlytics in Frameworks */,
-				D486B8542A3A46CE0044ACFC /* FirebaseFirestore in Frameworks */,
-				D486B84E2A3A46CE0044ACFC /* FirebaseAnalytics in Frameworks */,
-				D486B8502A3A46CE0044ACFC /* FirebaseAuth in Frameworks */,
-				D486B8582A3A46CE0044ACFC /* FirebaseStorage in Frameworks */,
+				D45632532A3B2079004163C1 /* FirebaseAppCheck in Frameworks */,
+				D45632572A3B2079004163C1 /* FirebaseCrashlytics in Frameworks */,
+				D45632552A3B2079004163C1 /* FirebaseAuth in Frameworks */,
+				D45632592A3B2079004163C1 /* FirebaseFirestore in Frameworks */,
+				D456325D2A3B2079004163C1 /* FirebaseStorage in Frameworks */,
+				D45632512A3B2079004163C1 /* FirebaseAnalytics in Frameworks */,
+				D456325B2A3B2079004163C1 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +144,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D456324B2A3B1495004163C1 /* Quick in Frameworks */,
+				D456324E2A3B14A8004163C1 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +233,12 @@
 		D4BB6A462A2E2C4400FA6939 /* FirechatTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4BB6A472A2E2C4400FA6939 /* FirechatTests.swift */,
+				D456326E2A3B23A4004163C1 /* FirebaseMock.swift */,
+				D45632702A3B271E004163C1 /* AuthViewModelSpec.swift */,
+				D45632722A3B27AF004163C1 /* AlertViewModelSpec.swift */,
+				D456326C2A3B2336004163C1 /* UserViewModelSpec.swift */,
+				D45632472A3B1322004163C1 /* MessageViewModelSpec.swift */,
+				D45632462A3B1322004163C1 /* FirechatTests-Bridging-Header.h */,
 			);
 			path = FirechatTests;
 			sourceTree = "<group>";
@@ -311,12 +331,13 @@
 			);
 			name = Firechat;
 			packageProductDependencies = (
-				D486B84D2A3A46CE0044ACFC /* FirebaseAnalytics */,
-				D486B84F2A3A46CE0044ACFC /* FirebaseAuth */,
-				D486B8512A3A46CE0044ACFC /* FirebaseCrashlytics */,
-				D486B8532A3A46CE0044ACFC /* FirebaseFirestore */,
-				D486B8552A3A46CE0044ACFC /* FirebaseFirestoreSwift */,
-				D486B8572A3A46CE0044ACFC /* FirebaseStorage */,
+				D45632502A3B2079004163C1 /* FirebaseAnalytics */,
+				D45632522A3B2079004163C1 /* FirebaseAppCheck */,
+				D45632542A3B2079004163C1 /* FirebaseAuth */,
+				D45632562A3B2079004163C1 /* FirebaseCrashlytics */,
+				D45632582A3B2079004163C1 /* FirebaseFirestore */,
+				D456325A2A3B2079004163C1 /* FirebaseFirestoreSwift */,
+				D456325C2A3B2079004163C1 /* FirebaseStorage */,
 			);
 			productName = Firechat;
 			productReference = D4BB6A332A2E2C4200FA6939 /* Firechat.app */;
@@ -336,6 +357,10 @@
 				D4BB6A452A2E2C4400FA6939 /* PBXTargetDependency */,
 			);
 			name = FirechatTests;
+			packageProductDependencies = (
+				D456324A2A3B1495004163C1 /* Quick */,
+				D456324D2A3B14A8004163C1 /* Nimble */,
+			);
 			productName = FirechatTests;
 			productReference = D4BB6A432A2E2C4400FA6939 /* FirechatTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -373,6 +398,7 @@
 					};
 					D4BB6A422A2E2C4400FA6939 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = D4BB6A322A2E2C4200FA6939;
 					};
 					D4BB6A4C2A2E2C4400FA6939 = {
@@ -392,7 +418,9 @@
 			);
 			mainGroup = D4BB6A2A2A2E2C4200FA6939;
 			packageReferences = (
-				D486B84C2A3A46CE0044ACFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D45632492A3B1494004163C1 /* XCRemoteSwiftPackageReference "Quick" */,
+				D456324C2A3B14A8004163C1 /* XCRemoteSwiftPackageReference "Nimble" */,
+				D456324F2A3B2079004163C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D4BB6A342A2E2C4200FA6939 /* Products */;
 			projectDirPath = "";
@@ -475,7 +503,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4BB6A482A2E2C4400FA6939 /* FirechatTests.swift in Sources */,
+				D456326F2A3B23A4004163C1 /* FirebaseMock.swift in Sources */,
+				D456326D2A3B2336004163C1 /* UserViewModelSpec.swift in Sources */,
+				D45632732A3B27AF004163C1 /* AlertViewModelSpec.swift in Sources */,
+				D45632482A3B1322004163C1 /* MessageViewModelSpec.swift in Sources */,
+				D45632712A3B271E004163C1 /* AuthViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +723,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -699,6 +732,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghl.FirechatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "FirechatTests/FirechatTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Firechat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Firechat";
@@ -710,6 +745,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -718,6 +754,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghl.FirechatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "FirechatTests/FirechatTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Firechat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Firechat";
@@ -800,7 +837,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D486B84C2A3A46CE0044ACFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		D45632492A3B1494004163C1 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		D456324C2A3B14A8004163C1 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		D456324F2A3B2079004163C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -811,34 +864,49 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D486B84D2A3A46CE0044ACFC /* FirebaseAnalytics */ = {
+		D456324A2A3B1495004163C1 /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D486B84C2A3A46CE0044ACFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = D45632492A3B1494004163C1 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		D456324D2A3B14A8004163C1 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D456324C2A3B14A8004163C1 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		D45632502A3B2079004163C1 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D456324F2A3B2079004163C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		D486B84F2A3A46CE0044ACFC /* FirebaseAuth */ = {
+		D45632522A3B2079004163C1 /* FirebaseAppCheck */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D486B84C2A3A46CE0044ACFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = D456324F2A3B2079004163C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		D45632542A3B2079004163C1 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D456324F2A3B2079004163C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		D486B8512A3A46CE0044ACFC /* FirebaseCrashlytics */ = {
+		D45632562A3B2079004163C1 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D486B84C2A3A46CE0044ACFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = D456324F2A3B2079004163C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		D486B8532A3A46CE0044ACFC /* FirebaseFirestore */ = {
+		D45632582A3B2079004163C1 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D486B84C2A3A46CE0044ACFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = D456324F2A3B2079004163C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		D486B8552A3A46CE0044ACFC /* FirebaseFirestoreSwift */ = {
+		D456325A2A3B2079004163C1 /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D486B84C2A3A46CE0044ACFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = D456324F2A3B2079004163C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
 		};
-		D486B8572A3A46CE0044ACFC /* FirebaseStorage */ = {
+		D456325C2A3B2079004163C1 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D486B84C2A3A46CE0044ACFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = D456324F2A3B2079004163C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
