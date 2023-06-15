@@ -24,8 +24,7 @@ Feel free to clone, reuse and improve codebase.
 - Quick and Nible tests
 
 ## Architecture
-This project is build with MVVM-C and follows the Clean Architecture design.
-It is also build around Protocol Oriented Programming.
+This project is build with MVVM-C architecture.
 
 ## Screenshots
 ![Image alt text](./firechat-auth.png)

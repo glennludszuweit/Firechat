@@ -25,6 +25,7 @@ class FirebaseManager: NSObject {
     let auth: Auth
     let storage: Storage
     let firestore: Firestore
+    let crashlytics: Crashlytics
     
     static let shared = FirebaseManager()
     
@@ -33,6 +34,7 @@ class FirebaseManager: NSObject {
         self.auth = Auth.auth()
         self.storage = Storage.storage()
         self.firestore = Firestore.firestore()
+        self.crashlytics = Crashlytics.crashlytics()
         super.init()
     }
 }
