@@ -10,6 +10,7 @@ Feel free to clone, reuse and improve codebase.
 - User will be able to reset password if forgotten.
 - User be able to send text and image messages.
 - User will have list of recently messaged users.
+- User will be able to delete conversation.
 - User will be able to delete their account.
 - Error handling alerts.
 
