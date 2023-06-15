@@ -17,10 +17,6 @@ struct EntryPoint: View {
             } else {
                 LoginView(alertViewModel: AlertViewModel(), authViewModel: AuthViewModel())
             }
-            
-            Button("Crash") {
-              fatalError("Crash was triggered")
-            }
         }
     }
 }

@@ -42,6 +42,8 @@ struct LoginView: View {
             Button(action: {
                 if authViewModel.validateUser(email: email, pass: password) {
                     authViewModel.login(email: email, password: password, coordinator: coordinator, alertViewModel: alertViewModel)
+                    FirebaseManager.shared.trackAnalyticsEvent(eventName: "Logged in successful", parameters: ["Login": "LoginButton"])
+
                 }
             }, label: {
                 Text(NSLocalizedString("button_submit", comment: "Login"))

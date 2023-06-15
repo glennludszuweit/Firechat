@@ -37,4 +37,8 @@ class FirebaseManager: NSObject {
         self.crashlytics = Crashlytics.crashlytics()
         super.init()
     }
+    
+    func trackAnalyticsEvent(eventName: String, parameters: [String: Any]? = nil) {
+        Analytics.logEvent(eventName, parameters: parameters)
+    }
 }
