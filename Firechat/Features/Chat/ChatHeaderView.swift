@@ -72,6 +72,12 @@ struct ChatHeaderView: View {
                     messageViewModel.snapShotListener?.remove()
                     
                 }),
+                .destructive(Text(NSLocalizedString("text_delete_acc", comment: "Delete account")), action: {
+                    userViewModel.deleteAccount(coordinator: coordinator, alertViewModel: alertViewModel)
+                    messageViewModel.recentMessages.removeAll()
+                    messageViewModel.snapShotListener?.remove()
+                    
+                }),
                     .cancel()
             ])
         }

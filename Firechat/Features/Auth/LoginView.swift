@@ -42,8 +42,6 @@ struct LoginView: View {
             Button(action: {
                 if authViewModel.validateUser(email: email, pass: password) {
                     authViewModel.login(email: email, password: password, coordinator: coordinator, alertViewModel: alertViewModel)
-                } else {
-                    alertViewModel.setErrorValues(errorMessage: "Invalid User!", showAlert: true)
                 }
             }, label: {
                 Text(NSLocalizedString("button_submit", comment: "Login"))

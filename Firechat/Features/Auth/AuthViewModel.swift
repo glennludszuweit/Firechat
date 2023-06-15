@@ -37,6 +37,8 @@ class AuthViewModel: ObservableObject {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
             if let error = error {
                 alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
+                print(error)
+                print(alertViewModel.showAlert)
                 return
             } else {
                 coordinator.isLoggedIn = true

@@ -27,7 +27,7 @@ class UserViewModel: ObservableObject {
             }
             
             guard let data = snapshot?.data() else { return }
-
+            
             let uid = data["uid"] as? String ?? ""
             let username = data["username"] as? String ?? ""
             let email = data["email"] as? String ?? ""
@@ -44,7 +44,7 @@ class UserViewModel: ObservableObject {
             }
             
             guard let data = snapshot?.documents else { return }
-
+            
             data.forEach { el in
                 let uid = el["uid"] as? String ?? ""
                 let username = el["username"] as? String ?? ""
@@ -55,6 +55,26 @@ class UserViewModel: ObservableObject {
                     self.users.append(user)
                 }
             }
+        }
+    }
+    
+    func deleteAccount(coordinator: Coordinator, alertViewModel: AlertViewModel) {
+        if let authUser = authUser {
+            FirebaseManager.shared.auth.currentUser?.delete { error in
+                if let error = error {
+                    alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
+                } else {
+                    print("User successfully deleted")
+                }
+            }
+            FirebaseManager.shared.storage.reference().child(authUser.uid).delete  { error in
+                if let error = error {
+                    alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
+                } else {
+                    print("Image successfully deleted")
+                }
+            }
+            coordinator.isLoggedIn = false
         }
     }
 }

@@ -103,6 +103,44 @@ class MessageViewModel: ObservableObject {
         }
     }
     
+    func removeConversation(id: String, coordinator: Coordinator, alertViewModel: AlertViewModel) {
+        guard let currentUser = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        
+        FirebaseManager.shared.firestore
+            .collection("recent_messages")
+            .document(currentUser)
+            .collection("messages")
+            .document(id)
+            .delete { error in
+                if let error = error {
+                    alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
+                    return
+                } else {
+                    print("deleted message")
+                }
+            }
+        
+        FirebaseManager.shared.firestore
+            .collection("recent_messages")
+            .document(id)
+            .collection("messages")
+            .document(currentUser)
+            .delete { error in
+                if let error = error {
+                    alertViewModel.setErrorValues(errorMessage: error.localizedDescription, showAlert: true)
+                    return
+                } else {
+                    print("deleted recipients message")
+                }
+            }
+        
+        
+        self.getRecentMessages(coordinator: coordinator, alertViewModel: alertViewModel)
+        self.recentMessages = recentMessages.filter { message in
+            message.id == id
+        }
+    }
+    
     private func senderMessageDoc(from: String, to: String, data: [String : Any], alertViewModel: AlertViewModel) {
         let document = FirebaseManager.shared.firestore
             .collection("messages")

@@ -18,15 +18,23 @@ struct ChatListView: View {
         if userViewModel.authUser != nil {
             VStack {
                 ChatHeaderView(alertViewModel: alertViewModel, userViewModel: UserViewModel(), authViewModel: AuthViewModel(), messageViewModel: messageViewModel, shouldShowLogOutOptions: $shouldShowLogOutOptions)
-                ScrollView {
-                    ForEach(messageViewModel.recentMessages, id: \.id) { message in
-                        Button {
-                            coordinator.messageLogScreen(user: User(uid: message.userId, username: message.userName, email: message.userEmail, image: message.userImage))
-                        } label: {
-                            ChatListCellView(message: message)
+                
+                List(messageViewModel.recentMessages, id: \.id) { message in
+                    Button {
+                        coordinator.messageLogScreen(user: User(uid: message.userId, username: message.userName, email: message.userEmail, image: message.userImage))
+                    } label: {
+                        ChatListCellView(message: message)
+                    }.listRowSeparator(.hidden)
+                        .swipeActions {
+                            Button(action: {
+                                messageViewModel.removeConversation(id: message.id ?? "", coordinator: coordinator, alertViewModel: alertViewModel)
+                                print("working")
+                            }) {
+                                Label("", systemImage: "trash")
+                            }
+                            .tint(.red)
                         }
-                    }
-                }
+                }.listStyle(.plain)
             }.navigationBarBackButtonHidden()
                 .onAppear {
                     messageViewModel.getRecentMessages(coordinator: coordinator, alertViewModel: alertViewModel)

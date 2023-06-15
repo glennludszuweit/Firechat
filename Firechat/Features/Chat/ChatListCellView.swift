@@ -13,7 +13,7 @@ struct ChatListCellView: View {
     func sliceString(str: String) -> String {
         if str.count > 25 {
             let startIndex = str.index(str.startIndex, offsetBy: 0)
-            let endIndex = str.index(str.startIndex, offsetBy: 25)
+            let endIndex = str.index(str.startIndex, offsetBy: 20)
             return "\(String(str[startIndex..<endIndex]))..."
         } else {
             return str
@@ -61,13 +61,14 @@ struct ChatListCellView: View {
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(Color("DarkOrange"))
                 }
-                Divider()
-                    .padding(.vertical, 8)
+                Divider().offset(y: 10)
+//                    .padding(.vertical, 8)
             } else {
                 ProgressView()
             }
-        }.padding(.horizontal)
-            .padding(.top, 10)
+        }
+//        .padding(.horizontal)
+//            .padding(.top, 10)
     }
 }
 

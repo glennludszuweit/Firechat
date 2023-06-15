@@ -7,6 +7,7 @@
 */
 
 "button_cancel" = "Stornieren";
+"button_delete" = "Löschen";
 "button_okay" = "Okay";
 "button_submit" = "Einreichen";
 "button_edit" = "Bearbeiten";
@@ -27,5 +28,6 @@
 
 "text_settings" = "Einstellungen";
 "text_logout" = "Ausloggen";
+"text_delete_acc" = "Konto löschen";
 "text_terms" = "Mit dem Absenden dieses Formulars stimmen Sie den Nutzungsbedingungen zu.";
 "text_registered_email" = "Geben Sie die registrierte E-Mail-Adresse ein.";

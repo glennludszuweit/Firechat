@@ -7,6 +7,7 @@
 */
 
 "button_cancel" = "Cancel";
+"button_delete" = "Delete";
 "button_okay" = "Okay";
 "button_submit" = "Submit";
 "button_edit" = "Edit";
@@ -27,5 +28,6 @@
 
 "text_settings" = "Settings";
 "text_logout" = "Logout";
+"text_delete_acc" = "Delete account";
 "text_terms" = "By submiting this form, you agree to the terms and services.";
 "text_registered_email" = "Enter registered email address.";

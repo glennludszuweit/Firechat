@@ -69,8 +69,6 @@ struct RegisterView: View {
             Button(action: {
                 if canRegister() {
                     authViewModel.register(image: image!, username: username, email: email, password: password, coordinator: coordinator, alertViewModel: alertViewModel)
-                } else {
-                    alertViewModel.setErrorValues(errorMessage: "Invalid User!", showAlert: true)
                 }
             }, label: {
                 Text(NSLocalizedString("button_submit", comment: "Submit"))
